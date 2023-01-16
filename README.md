@@ -14,7 +14,7 @@ Install chatgpt-intl via npm : https://www.npmjs.com/package/chatgpt-intl
 ```
 
 ## Usage/Examples
-
+First, you have to obtain your API key from OPENAI, then you can use it here.
 ```javascript
 import ChatGPTIntl from 'chatgpt-intl';
 
@@ -23,7 +23,6 @@ const openAiKey = process.env.OPENAI_API_KEY
 const lang = 'en';
 const opts = {
     model: "text-davinci-003",
-    prompt: '',
     temperature: 0.9,
     max_tokens: 150,
     top_p: 1,

@@ -48,7 +48,7 @@ const response = await ChatGPTIntl(text, openAiKey, opts, lang);
 
 ## Authors
 
-- [@octokatherine](https://www.github.com/octokatherine)
+- [@asirihewage](https://github.com/asirihewage)
 
 
 ## License

@@ -54,7 +54,7 @@ lang - Type: string ( Must be `auto` or one of the codes (not case sensitive) co
 - Does not support larger text inputs
 
 ## Language Support
-
+Supported language codes contained in [SUPPORTED_LANGUAGES.md](https://github.com/asirihewage/chatGPT-intl/blob/main/SUPPORTED_LANGUAGES.md)
 
 ## Demo
 Sample App I created.

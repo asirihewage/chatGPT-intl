@@ -45,7 +45,7 @@ const ChatGPTIntl = async (text, openAiKey, opts, lang) => {
         );
     }
 
-    if (opts.openAiKey && lang && opts.model && opts.prompt && opts.temperature && opts.max_tokens && opts.top_p && opts.frequency_penalty && opts.presence_penalty) {
+    if (openAiKey && lang && opts.model && opts.prompt && opts.temperature && opts.max_tokens && opts.top_p && opts.frequency_penalty && opts.presence_penalty) {
         if(!isSupported(lang)){
             return Promise.reject({message: errors[0].replace('[lang]', lang)});
         }else {

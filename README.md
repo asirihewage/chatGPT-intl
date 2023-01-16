@@ -1,6 +1,6 @@
 # chatGPT-intl
-![Version](https://img.shields.io/packagist/v/asirihewage/chatGPT-intl?label=Version)
-![Package Size](https://img.shields.io/bundlephobia/min/chatGPT-intl?label=Package%20Size)
+![Version](https://img.shields.io/github/package-json/v/asirihewage/chatgpt-intl)
+![Package Size](https://img.shields.io/github/languages/code-size/asirihewage/chatGPT-intl)
 ### Enhanced ChatGPT Wrapper for Internationalization - NodeJS
 This NodeJS module acts as a wrapper for ChatGPT API and will help you to use ChatGPT in your own language.
 ![Logo](res/logo.jpg)

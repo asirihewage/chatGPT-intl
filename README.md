@@ -33,6 +33,14 @@ const opts = {
 const response = await ChatGPTIntl(text, openAiKey, opts, lang);
 ```
 
+## API
+text - Type: string (The text to be translated)
+
+openAiKey - Type: string (API Key obtained from OpenAI Developer Account)
+
+opts - Type: object (OpenAI Language Model and hyperparameters)
+
+lang - Type: string ( Must be `auto` or one of the codes (not case sensitive) contained in [SUPPORTED_LANGUAGES.md](https://github.com/asirihewage/chatGPT-intl/blob/main/SUPPORTED_LANGUAGES.md).)
 
 ## Features
 

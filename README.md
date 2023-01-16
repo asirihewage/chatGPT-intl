@@ -39,12 +39,19 @@ const response = await ChatGPTIntl(text, openAiKey, opts, lang);
 
 - Use ChatGPT API in your own language
 - Ability to customize the chatGPT model
-- Support for more than 50 language
+- Supports more than 50 languages
 
 ## Limitations
 
-- Does not support for syntax
+- Does not support for syntax and codes
 - Does not support larger text inputs
+
+## Language Support
+
+
+## Demo
+Sample App I created.
+![Demo](res/demo.jpg)
 
 ## Authors
 
@@ -54,5 +61,3 @@ const response = await ChatGPTIntl(text, openAiKey, opts, lang);
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-

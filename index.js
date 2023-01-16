@@ -1,3 +1,9 @@
+/**
+ *
+ * chatGPT-intl
+ *
+ * See https://github.com/asirihewage/chatGPT-intl
+ */
 const { Translator } = require('./translator');
 const { Configuration, OpenAIApi } = require("openai");
 const {isSupported} = require("./languages");

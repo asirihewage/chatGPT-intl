@@ -32,7 +32,7 @@
     "tunnel": "0.0.6"
   },
   "devDependencies": {
-    "chatgpt-intl": "^1.0.6",
+    "chatgpt-intl": "^1.0.7",
     "nodemon": "^2.0.20",
     "dotenv": "^16.0.3"
   },

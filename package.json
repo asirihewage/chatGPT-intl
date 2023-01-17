@@ -1,6 +1,6 @@
 {
   "name": "chatgpt-intl",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Enhanced ChatGPT Wrapper for Internationalization - NodeJS",
   "main": "index.js",
   "repository": {

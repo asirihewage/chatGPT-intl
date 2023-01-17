@@ -26,7 +26,7 @@
   "homepage": "https://github.com/asirihewage/chatGPT-intl",
   "dependencies": {
     "configstore": "4.0.0",
-    "got": "9.6.0",
+    "got": "11.8.5",
     "openai": "^3.1.0",
     "proxy-check": "1.0.8",
     "tunnel": "0.0.6"

@@ -17,10 +17,12 @@ Install chatgpt-intl via npm : https://www.npmjs.com/package/chatgpt-intl
 First, you have to obtain your API key from OPENAI, then you can use it here.
 ```javascript
 import ChatGPTIntl from 'chatgpt-intl';
+import dotenv from "dotenv";
+dotenv.config();
 
-const text = ""
-const openAiKey = process.env.OPENAI_API_KEY
-const lang = 'en';
+const text = "ChatGPT ගැන කියන්න"
+const openAiKey = process.env.openAiKey
+const lang = 'si';
 const opts = {
     model: "text-davinci-003",
     temperature: 0.9,
@@ -30,7 +32,12 @@ const opts = {
     presence_penalty: 0.6
 };
 
-const response = await ChatGPTIntl(text, openAiKey, opts, lang);
+
+ChatGPTIntl(text, openAiKey, opts, lang).then((res) => {
+    console.log(res);
+}).catch((er)=> {
+    console.log(er);
+});
 ```
 
 ## API

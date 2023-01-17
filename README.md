@@ -57,12 +57,19 @@ lang - Type: string ( Must be `auto` or one of the codes (not case sensitive) co
 Supported language codes contained in [SUPPORTED_LANGUAGES.md](https://github.com/asirihewage/chatGPT-intl/blob/main/SUPPORTED_LANGUAGES.md)
 
 ## Demo
+```shell
+npm run demo
+```
 Sample App I created.
 ![Demo](res/demo.jpg)
 
 ## Authors
 
 - [@asirihewage](https://github.com/asirihewage)
+
+## Contributions
+
+- Issues and feature updates are welcome.
 
 
 ## License

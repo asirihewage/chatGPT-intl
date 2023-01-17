@@ -9,7 +9,6 @@ const { Configuration, OpenAIApi } = require("openai");
 const {isSupported} = require("./languages");
 
 const ChatGPTIntl = async (text, openAiKey, opts, lang) => {
-
     opts = JSON.parse(JSON.stringify(opts));
     let errors = [
         'The language «[lang]» is not supported',
@@ -45,14 +44,14 @@ const ChatGPTIntl = async (text, openAiKey, opts, lang) => {
         );
     }
 
-    if (openAiKey && lang && opts.model && opts.temperature && opts.max_tokens && opts.top_p && opts.frequency_penalty && opts.presence_penalty) {
+    if (text && openAiKey && lang && opts.model && opts.temperature && opts.max_tokens && opts.top_p && opts.frequency_penalty && opts.presence_penalty) {
         if(!isSupported(lang)){
-            return Promise.reject({message: errors[0].replace('[lang]', lang)});
+            return Promise.reject({error: errors[0].replace('[lang]', lang)});
         }else {
             return ChatGPT_Intl();
         }
     }else {
-        return Promise.reject({message: errors[1]});
+        return Promise.reject({error: errors[1], data: {opts, text , openAiKey , lang}});
     }
 
 }

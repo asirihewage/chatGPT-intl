@@ -10,13 +10,13 @@ const opts = {
     temperature: 0.9,
     max_tokens: 150,
     top_p: 1,
-    frequency_penalty: 0.0,
+    frequency_penalty: 0.1,
     presence_penalty: 0.6
 };
 
 
 ChatGPTIntl(text, openAiKey, opts, lang).then((res) => {
-    console.log(res);
+    console.log("Demo result", res);
 }).catch((er)=> {
-    console.log(er);
+    console.log("Demo error", er);
 });

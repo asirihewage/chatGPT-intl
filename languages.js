@@ -146,7 +146,7 @@ function getCode(desiredLang) {
  * @param desiredLang – the ISO 639-1 code or the name of the desired language
  * @returns {boolean}
  */
-function isSupported(desiredLang) {
+export function isSupported(desiredLang) {
     return Boolean(getCode(desiredLang));
 }
 
@@ -181,7 +181,8 @@ function utf8Length(str) {
     return utf8.length;
 }
 
-module.exports = languages;
-module.exports.isSupported = isSupported;
-module.exports.getCode = getCode;
-module.exports.utf8Length = utf8Length;
+export default {
+    isSupported,
+    getCode,
+    utf8Length,
+    languages }

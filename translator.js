@@ -5,14 +5,14 @@
  * See https://github.com/asirihewage/chatGPT-intl
  */
 
-const querystring = require('querystring');
-const languages = require('./languages');
-const proxy_check = require('proxy-check');
-const tunnel = require('tunnel');
-const token = require('./token');
-const got = require('got');
+import querystring from 'querystring';
+import languages from './languages.js';
+import proxy_check from 'proxy-check';
+import tunnel from 'tunnel';
+import get from './token.js';
+import got from 'got';
 
-const Translator = async (text, opts) => {
+export const Translator = async (text, opts) => {
     opts = opts || {};
     opts = JSON.parse(JSON.stringify(opts));
 
@@ -331,7 +331,7 @@ const Translator = async (text, opts) => {
 
     const translate_string = () => {
         return new Promise(async (resolve, reject) => {
-            let t = await token.get(text, opts);
+            let t = await get(text, opts);
 
             if (!t) return reject({google_free: errors[3]});
 
@@ -408,6 +408,3 @@ const Translator = async (text, opts) => {
         return translate_string();
     }
 };
-
-module.exports = Translator;
-module.exports.languages = languages;

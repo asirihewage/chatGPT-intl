@@ -4,32 +4,58 @@
  *
  * See https://github.com/asirihewage/chatGPT-intl
  */
-var got = require('got');
-var Configstore = require('configstore');
+import got from 'got';
+import Configstore from 'configstore';
+
+const config = new Configstore('google-translate-api');
 
 /* eslint-disable */
+let yr;
+
+const wr = function (a) {
+    return function () {
+        return a
+    }
+};
+const xr = function (a, b) {
+for (let c = 0; c < b.length - 2; c += 3) {
+    let d = b.charAt(c + 2)
+    ;d = "a" <= d ? d.charCodeAt(0) - 87 : Number(d);
+    d = "+" === b.charAt(c + 1) ? a >>> d : a << d;
+    a = "+" === b.charAt(c) ? a + d & 4294967295 : a ^ d
+}
+return a
+};
+
+const window = {
+    TKK: config.get('TKK') || '422854.923862967'
+};
+
 // BEGIN
 
 function sM(a) {
-    var b;
+    let e = [];
+    let f;
+    let g = 0;
+    let c;
+    let b;
     if (null !== yr)
         b = yr;
     else {
         b = wr(String.fromCharCode(84));
-        var c = wr(String.fromCharCode(75));
+        c = wr(String.fromCharCode(75));
         b = [b(), b()];
         b[1] = c();
         b = (yr = window[b.join(c())] || "") || ""
     }
-    var d = wr(String.fromCharCode(116))
-        , c = wr(String.fromCharCode(107))
-        , d = [d(), d()];
+    let d = wr(String.fromCharCode(116));c = wr(String.fromCharCode(107));
+    d = [d(), d()];
     d[1] = c();
     c = "&" + d.join("") + "=";
     d = b.split(".");
     b = Number(d[0]) || 0;
-    for (var e = [], f = 0, g = 0; g < a.length; g++) {
-        var l = a.charCodeAt(g);
+    for (; g < a.length; g++) {
+        let l = a.charCodeAt(g);
         128 > l ? e[f++] = l : (2048 > l ? e[f++] = l >> 6 | 192 : (55296 === (l & 64512) && g + 1 < a.length && 56320 === (a.charCodeAt(g + 1) & 64512) ? (l = 65536 + ((l & 1023) << 10) + (a.charCodeAt(++g) & 1023),
             e[f++] = l >> 18 | 240,
             e[f++] = l >> 12 & 63 | 128) : e[f++] = l >> 12 | 224,
@@ -47,41 +73,22 @@ function sM(a) {
     return c + (a.toString() + "." + (a ^ b))
 }
 
-var yr = null;
-var wr = function (a) {
-    return function () {
-        return a
-    }
-}
-    , xr = function (a, b) {
-    for (var c = 0; c < b.length - 2; c += 3) {
-        var d = b.charAt(c + 2)
-            , d = "a" <= d ? d.charCodeAt(0) - 87 : Number(d)
-            , d = "+" === b.charAt(c + 1) ? a >>> d : a << d;
-        a = "+" === b.charAt(c) ? a + d & 4294967295 : a ^ d
-    }
-    return a
-};
+yr = null;
 
 // END
 /* eslint-enable */
 
-var config = new Configstore('google-translate-api');
-
-var window = {
-    TKK: config.get('TKK') || '422854.923862967'
-};
 
 function updateTKK(opts) {
     opts = opts || {tld: 'com', proxy: {}, headers: {}};
     return new Promise(function (resolve, reject) {
-        var now = Math.floor(Date.now() / 3600000);
+        const now = Math.floor(Date.now() / 3600000);
 
         if (Number(window.TKK.split('.')[0]) === now) {
             resolve();
         } else {
             got('https://translate.google.' + opts.tld, {...opts.proxy, headers: opts.headers, timeout: 2000, retry: 0}).then(function (res) {
-                var code = res.body.match(/TKK='.*?';/g);
+                const code = res.body.match(/TKK='.*?';/g);
 
                 if (code) {
                     eval(code[0]);
@@ -116,4 +123,4 @@ function get(text, opts) {
     });
 }
 
-module.exports.get = get;
+export default get;

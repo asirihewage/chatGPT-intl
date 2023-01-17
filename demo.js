@@ -1,4 +1,4 @@
-import ChatGPTIntl from 'chatgpt-intl';
+import ChatGPTIntl from './index.js';
 import dotenv from "dotenv";
 dotenv.config();
 

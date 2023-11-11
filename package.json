@@ -27,7 +27,7 @@
   "dependencies": {
     "configstore": "4.0.0",
     "got": "12.5.3",
-    "openai": "^3.1.0",
+    "openai": "^4.17.4",
     "proxy-check": "1.0.8",
     "tunnel": "0.0.6"
   },
